@@ -323,7 +323,7 @@ export default function PointsTracker() {
                     <th className="text-center py-3 px-4 font-semibold text-gray-700">Meetings</th>
                     <th className="text-center py-3 px-4 font-semibold text-gray-700">Guest Speaker</th>
                     <th className="text-center py-3 px-4 font-semibold text-gray-700">CfE</th>
-                    <th className="text-center py-3 px-4 font-semibold text-gray-700">Combo</th>
+                    <th className="text-center py-3 px-4 font-semibold text-gray-700">Hackathon/Golden Idea</th>
                     <th className="text-center py-3 px-4 font-semibold text-gray-700">Tier</th>
                     <th className="text-center py-3 px-4 font-semibold text-gray-700">Award</th>
                   </tr>
@@ -625,7 +625,7 @@ export default function PointsTracker() {
                   <th className="text-center py-3 px-4 font-semibold text-gray-700">Meetings</th>
                   <th className="text-center py-3 px-4 font-semibold text-gray-700">Guest Speaker</th>
                   <th className="text-center py-3 px-4 font-semibold text-gray-700">CfE</th>
-                  <th className="text-center py-3 px-4 font-semibold text-gray-700">Combo</th>
+                  <th className="text-center py-3 px-4 font-semibold text-gray-700">Hackathon/Golden Idea</th>
                   <th className="text-center py-3 px-4 font-semibold text-gray-700">Tier</th>
                   <th className="text-center py-3 px-4 font-semibold text-gray-700">Award</th>
                   <th className="text-center py-3 px-4 font-semibold text-gray-700">Actions</th>
