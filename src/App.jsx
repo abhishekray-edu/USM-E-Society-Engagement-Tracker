@@ -267,19 +267,19 @@ export default function PointsTracker() {
               <h2 className="font-semibold text-lg mb-3 text-gray-900">Point Values</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <div className="bg-white p-3 rounded shadow-sm">
-                  <div className="text-sm text-gray-600">E-Society General Body Meeting</div>
+                  <div className="text-sm text-gray-600">General Body Meeting</div>
                   <div className="text-2xl font-bold text-black">1 pt</div>
                 </div>
                 <div className="bg-white p-3 rounded shadow-sm">
-                  <div className="text-sm text-gray-600">E-Society Guest Speaker Event</div>
+                  <div className="text-sm text-gray-600">Guest Speaker Event</div>
                   <div className="text-2xl font-bold text-black">3 pts</div>
                 </div>
                 <div className="bg-white p-3 rounded shadow-sm">
-                  <div className="text-sm text-gray-600">CfE Event Attendance</div>
+                  <div className="text-sm text-gray-600">Coffee w/ Entrepreneur</div>
                   <div className="text-2xl font-bold text-black">3 pts</div>
                 </div>
                 <div className="bg-white p-3 rounded shadow-sm">
-                  <div className="text-sm text-gray-600">Golden Idea or Hackathon</div>
+                  <div className="text-sm text-gray-600">Golden Idea/ Hackathon</div>
                   <div className="text-2xl font-bold text-black">4 pts</div>
                 </div>
               </div>
@@ -362,36 +362,67 @@ export default function PointsTracker() {
           </div>
 
           <div className="mt-6 bg-white rounded-lg shadow-xl p-6">
-            <h3 className="font-bold text-lg mb-3 text-gray-800">Stipulations & Key Information</h3>
+            <h3 className="font-bold text-xl mb-4 text-gray-900">Student Organization Point System</h3>
             
-            <div className="space-y-3 text-sm text-gray-700">
+            <div className="space-y-4 text-sm text-gray-700">
+              {/* Point Values */}
               <div>
-                <p className="font-semibold text-gray-900 mb-1">Point Accrual Period:</p>
-                <p>Points accumulate from <strong>July 1st to June 30th</strong> and reset annually.</p>
-              </div>
-
-              <div>
-                <p className="font-semibold text-gray-900 mb-1">Travel Support Application:</p>
-                <p>Reaching a tier unlocks <strong>eligibility to apply</strong> but does not guarantee funding. Applications are processed on a priority basis depending on fund availability.</p>
-              </div>
-
-              <div>
-                <p className="font-semibold text-gray-900 mb-1">Gold Tier Extension:</p>
-                <p>Gold tier members have until <strong>December 31st of the following year</strong> (6 months into the new cycle) to apply for and use their funding.</p>
-              </div>
-
-              <div>
-                <p className="font-semibold text-gray-900 mb-2">Priority Events (for application consideration):</p>
-                <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li><strong>Startup Pitch Competitions:</strong> Rice Business Plan Competition, TCU Values and Ventures, Baylor New Venture, MS State Startup Summit, Ole Miss Business Plan Competition, etc.</li>
-                  <li><strong>Startup Hackathons:</strong> Techstars Startup Weekend Events</li>
-                  <li><strong>Premier Hackathons:</strong> Y-Combinator hackathons, HackMIT, EasyA Hackathon, AngelHack, etc.</li>
+                <p className="font-bold text-base text-gray-900 mb-2">📊 Point Values:</p>
+                <ul className="space-y-1 ml-4">
+                  <li>• E-Society General Body Meeting Attendance: <strong>1 point</strong></li>
+                  <li>• E-Society Guest Speaker Event Attendance: <strong>3 points</strong></li>
+                  <li>• Center for Entrepreneurship (CfE) Event Attendance: <strong>3 points</strong></li>
+                  <li>• Golden Idea or Hackathon Participation: <strong>4 points</strong></li>
                 </ul>
               </div>
 
+              {/* Point Accrual */}
               <div>
-                <p className="font-semibold text-gray-900 mb-1">Conference Eligibility:</p>
-                <p>Gold tier students (35+ points) and board members qualify for conference/networking travel as a <strong>separate award category</strong>.</p>
+                <p className="font-bold text-base text-gray-900 mb-2">📅 Point Accrual:</p>
+                <p className="ml-4">July 1st - June 30th (resets annually)</p>
+              </div>
+
+              {/* Travel Support Tiers */}
+              <div>
+                <p className="font-bold text-base text-gray-900 mb-2">✈️ Travel Support Tiers:</p>
+                <p className="ml-4 mb-2">Students earn eligibility to apply for travel support:</p>
+                <ul className="space-y-1 ml-8">
+                  <li>• <strong>Bronze Level (12 points):</strong> Eligible for up to $250</li>
+                  <li>• <strong>Silver Level (22 points):</strong> Eligible for up to $500 (Bronze + $250)</li>
+                  <li>• <strong>Gold Level (35 points):</strong> Eligible for up to $1000 (Silver + $500)</li>
+                </ul>
+              </div>
+
+              {/* Gold Tier Extension */}
+              <div>
+                <p className="font-bold text-base text-gray-900 mb-2">🏆 Gold Tier Extension:</p>
+                <p className="ml-4">Gold tier members have until <strong>December 31st of the following year</strong> (6 months into the new cycle) to apply for and use their funding.</p>
+              </div>
+
+              {/* Key Stipulations */}
+              <div>
+                <p className="font-bold text-base text-gray-900 mb-2">📋 Key Stipulations:</p>
+                
+                <div className="ml-4 space-y-3">
+                  <div>
+                    <p className="font-semibold text-gray-800">Application-Based:</p>
+                    <p className="ml-4">Reaching a tier unlocks eligibility to apply but does not guarantee funding. Applications are processed on a priority basis depending on fund availability.</p>
+                  </div>
+
+                  <div>
+                    <p className="font-semibold text-gray-800">Priority Events (for application consideration):</p>
+                    <ul className="ml-4 space-y-1">
+                      <li>• <strong>Startup Pitch Competitions:</strong> Rice Business Plan Competition, TCU Values and Ventures, Baylor New Venture, MS State Startup Summit, Ole Miss Business Plan Competition, etc.</li>
+                      <li>• <strong>Startup Hackathons:</strong> Techstars Startup Weekend Events</li>
+                      <li>• <strong>Premier Hackathons:</strong> Y-Combinator hackathons, HackMIT, EasyA Hackathon, AngelHack, etc.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="font-semibold text-gray-800">Conference Eligibility:</p>
+                    <p className="ml-4">Gold tier students (35+ points) and board members qualify for conference/networking travel as a <strong>separate award category</strong>.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -510,19 +541,19 @@ export default function PointsTracker() {
             <h2 className="font-semibold text-lg mb-3 text-gray-900">Point Values</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <div className="bg-white p-3 rounded shadow-sm">
-                <div className="text-sm text-gray-600">E-Society General Body Meeting</div>
+                <div className="text-sm text-gray-600">General Body Meeting</div>
                 <div className="text-2xl font-bold text-black">1 pt</div>
               </div>
               <div className="bg-white p-3 rounded shadow-sm">
-                <div className="text-sm text-gray-600">E-Society Guest Speaker Event</div>
+                <div className="text-sm text-gray-600">Guest Speaker Event</div>
                 <div className="text-2xl font-bold text-black">3 pts</div>
               </div>
               <div className="bg-white p-3 rounded shadow-sm">
-                <div className="text-sm text-gray-600">CfE Event Attendance</div>
+                <div className="text-sm text-gray-600">Coffee w/ Entrepreneur</div>
                 <div className="text-2xl font-bold text-black">3 pts</div>
               </div>
               <div className="bg-white p-3 rounded shadow-sm">
-                <div className="text-sm text-gray-600">Golden Idea or Hackathon</div>
+                <div className="text-sm text-gray-600">Golden Idea/ Hackathon</div>
                 <div className="text-2xl font-bold text-black">4 pts</div>
               </div>
             </div>
@@ -673,36 +704,67 @@ export default function PointsTracker() {
         </div>
 
         <div className="mt-6 bg-white rounded-lg shadow-xl p-6">
-          <h3 className="font-bold text-lg mb-3 text-gray-800">Stipulations & Key Information</h3>
+          <h3 className="font-bold text-xl mb-4 text-gray-900">Student Organization Point System</h3>
           
-          <div className="space-y-3 text-sm text-gray-700">
+          <div className="space-y-4 text-sm text-gray-700">
+            {/* Point Values */}
             <div>
-              <p className="font-semibold text-gray-900 mb-1">Point Accrual Period:</p>
-              <p>Points accumulate from <strong>July 1st to June 30th</strong> and reset annually.</p>
-            </div>
-
-            <div>
-              <p className="font-semibold text-gray-900 mb-1">Travel Support Application:</p>
-              <p>Reaching a tier unlocks <strong>eligibility to apply</strong> but does not guarantee funding. Applications are processed on a priority basis depending on fund availability.</p>
-            </div>
-
-            <div>
-              <p className="font-semibold text-gray-900 mb-1">Gold Tier Extension:</p>
-              <p>Gold tier members have until <strong>December 31st of the following year</strong> (6 months into the new cycle) to apply for and use their funding.</p>
-            </div>
-
-            <div>
-              <p className="font-semibold text-gray-900 mb-2">Priority Events (for application consideration):</p>
-              <ul className="list-disc list-inside space-y-1 ml-2">
-                <li><strong>Startup Pitch Competitions:</strong> Rice Business Plan Competition, TCU Values and Ventures, Baylor New Venture, MS State Startup Summit, Ole Miss Business Plan Competition, etc.</li>
-                <li><strong>Startup Hackathons:</strong> Techstars Startup Weekend Events</li>
-                <li><strong>Premier Hackathons:</strong> Y-Combinator hackathons, HackMIT, EasyA Hackathon, AngelHack, etc.</li>
+              <p className="font-bold text-base text-gray-900 mb-2">📊 Point Values:</p>
+              <ul className="space-y-1 ml-4">
+                <li>• E-Society General Body Meeting Attendance: <strong>1 point</strong></li>
+                <li>• E-Society Guest Speaker Event Attendance: <strong>3 points</strong></li>
+                <li>• Center for Entrepreneurship (CfE) Event Attendance: <strong>3 points</strong></li>
+                <li>• Golden Idea or Hackathon Participation: <strong>4 points</strong></li>
               </ul>
             </div>
 
+            {/* Point Accrual */}
             <div>
-              <p className="font-semibold text-gray-900 mb-1">Conference Eligibility:</p>
-              <p>Gold tier students (35+ points) and board members qualify for conference/networking travel as a <strong>separate award category</strong>.</p>
+              <p className="font-bold text-base text-gray-900 mb-2">📅 Point Accrual:</p>
+              <p className="ml-4">July 1st - June 30th (resets annually)</p>
+            </div>
+
+            {/* Travel Support Tiers */}
+            <div>
+              <p className="font-bold text-base text-gray-900 mb-2">✈️ Travel Support Tiers:</p>
+              <p className="ml-4 mb-2">Students earn eligibility to apply for travel support:</p>
+              <ul className="space-y-1 ml-8">
+                <li>• <strong>Bronze Level (12 points):</strong> Eligible for up to $250</li>
+                <li>• <strong>Silver Level (22 points):</strong> Eligible for up to $500 (Bronze + $250)</li>
+                <li>• <strong>Gold Level (35 points):</strong> Eligible for up to $1000 (Silver + $500)</li>
+              </ul>
+            </div>
+
+            {/* Gold Tier Extension */}
+            <div>
+              <p className="font-bold text-base text-gray-900 mb-2">🏆 Gold Tier Extension:</p>
+              <p className="ml-4">Gold tier members have until <strong>December 31st of the following year</strong> (6 months into the new cycle) to apply for and use their funding.</p>
+            </div>
+
+            {/* Key Stipulations */}
+            <div>
+              <p className="font-bold text-base text-gray-900 mb-2">📋 Key Stipulations:</p>
+              
+              <div className="ml-4 space-y-3">
+                <div>
+                  <p className="font-semibold text-gray-800">Application-Based:</p>
+                  <p className="ml-4">Reaching a tier unlocks eligibility to apply but does not guarantee funding. Applications are processed on a priority basis depending on fund availability.</p>
+                </div>
+
+                <div>
+                  <p className="font-semibold text-gray-800">Priority Events (for application consideration):</p>
+                  <ul className="ml-4 space-y-1">
+                    <li>• <strong>Startup Pitch Competitions:</strong> Rice Business Plan Competition, TCU Values and Ventures, Baylor New Venture, MS State Startup Summit, Ole Miss Business Plan Competition, etc.</li>
+                    <li>• <strong>Startup Hackathons:</strong> Techstars Startup Weekend Events</li>
+                    <li>• <strong>Premier Hackathons:</strong> Y-Combinator hackathons, HackMIT, EasyA Hackathon, AngelHack, etc.</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p className="font-semibold text-gray-800">Conference Eligibility:</p>
+                  <p className="ml-4">Gold tier students (35+ points) and board members qualify for conference/networking travel as a <strong>separate award category</strong>.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
