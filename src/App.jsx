@@ -1,7 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Award, TrendingUp, Calendar, Users, Lock, LogOut, Eye, EyeOff, X, Settings } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+// Automatically detect the correct API URL
+// If accessing via network IP (like from phone), use that IP for API
+// If accessing via localhost (desktop), use localhost for API
+const getApiUrl = () => {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL;
+  }
+  
+  const hostname = window.location.hostname;
+  const port = '3001';
+  
+  // If accessing from network IP, use that IP for backend
+  if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
+    return `http://${hostname}:${port}/api`;
+  }
+  
+  // Default to localhost
+  return `http://localhost:${port}/api`;
+};
+
+const API_URL = getApiUrl();
 
 export default function PointsTracker() {
   const [students, setStudents] = useState([]);

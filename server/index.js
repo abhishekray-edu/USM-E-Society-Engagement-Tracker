@@ -211,8 +211,10 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`Local: http://localhost:${PORT}`);
+  console.log(`Network: http://10.0.0.162:${PORT}`);
 });
 
 // Graceful shutdown
