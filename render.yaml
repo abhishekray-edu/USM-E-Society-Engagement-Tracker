@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: usm-esociety-tracker
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node server/production.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+

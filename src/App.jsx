@@ -2,23 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { Award, TrendingUp, Calendar, Users, Lock, LogOut, Eye, EyeOff, X, Settings } from 'lucide-react';
 
 // Automatically detect the correct API URL
-// If accessing via network IP (like from phone), use that IP for API
-// If accessing via localhost (desktop), use localhost for API
+// In production (deployed), use relative URLs (same domain)
+// In development (localhost), connect to local backend server
 const getApiUrl = () => {
+  // Allow override via environment variable
   if (import.meta.env.VITE_API_URL) {
     return import.meta.env.VITE_API_URL;
   }
   
   const hostname = window.location.hostname;
-  const port = '3001';
+  const protocol = window.location.protocol;
   
-  // If accessing from network IP, use that IP for backend
+  // Production: Use relative URL (same server hosts frontend + backend)
   if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
-    return `http://${hostname}:${port}/api`;
+    // If on a deployed domain, use relative path
+    if (hostname.includes('.onrender.com') || hostname.includes('.railway.app') || hostname.includes('.vercel.app')) {
+      return '/api';
+    }
+    // If on local network (like phone accessing desktop), use network IP with port
+    return `${protocol}//${hostname}:3001/api`;
   }
   
-  // Default to localhost
-  return `http://localhost:${port}/api`;
+  // Development: Connect to local backend server
+  return 'http://localhost:3001/api';
 };
 
 const API_URL = getApiUrl();

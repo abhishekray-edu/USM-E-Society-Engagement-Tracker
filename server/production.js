@@ -11,9 +11,21 @@ const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
-app.use(cors());
+// Middleware - Allow CORS from any origin
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
+
+// Log requests in production
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api/')) {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+  }
+  next();
+});
 
 // Initialize database
 await initDatabase();
@@ -225,9 +237,11 @@ app.get('*', (req, res) => {
   res.sendFile(join(__dirname, '../dist/index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Production mode - serving static files from dist/`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`✅ Server running on port ${PORT}`);
+  console.log(`📦 Production mode - serving static files from dist/`);
+  console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🔗 API available at /api/*`);
 });
 
 // Graceful shutdown
