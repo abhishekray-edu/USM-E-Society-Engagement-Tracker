@@ -22,6 +22,7 @@ const getApiUrl = () => {
 };
 
 const API_URL = getApiUrl();
+console.log('🔗 API URL:', API_URL);
 
 export default function PointsTracker() {
   const [students, setStudents] = useState([]);
@@ -60,13 +61,19 @@ export default function PointsTracker() {
   // Fetch students from API
   const fetchStudents = async () => {
     try {
+      console.log('📡 Fetching students from:', `${API_URL}/students`);
       const response = await fetch(`${API_URL}/students`);
-      if (!response.ok) throw new Error('Failed to fetch students');
+      console.log('📥 Response status:', response.status, response.statusText);
+      
+      if (!response.ok) throw new Error(`Failed to fetch students: ${response.status} ${response.statusText}`);
+      
       const data = await response.json();
+      console.log('✅ Loaded students:', data.length);
       setStudents(data);
     } catch (error) {
-      console.error('Error fetching students:', error);
-      alert('Failed to load student data. Please refresh the page.');
+      console.error('❌ Error fetching students:', error);
+      console.error('Error details:', error.message);
+      alert(`Failed to load student data. Please refresh the page.\n\nError: ${error.message}`);
     } finally {
       setLoading(false);
     }
