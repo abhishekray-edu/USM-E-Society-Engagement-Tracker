@@ -29,11 +29,14 @@ dist-ssr
 .env.production
 !.env.production.example
 
-# Database
+# Database (runtime database - never commit)
 server/database.db
 server/database.db-journal
 *.db
 *.db-journal
+
+# Seed database (initial data - OK to commit)
+!server/seed/*.db
 
 # Backups
 backup*.db

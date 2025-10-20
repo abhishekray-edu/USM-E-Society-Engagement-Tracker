@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const DB_PATH = join(__dirname, 'database.db');
+const SEED_DB_PATH = join(__dirname, 'seed', 'initial.db');
 
 let SQL;
 let db;
@@ -17,11 +18,18 @@ let db;
 export async function initDatabase() {
   SQL = await initSqlJs();
   
-  // Load existing database or create new one
+  // Load existing database, or seed database, or create new one
   if (existsSync(DB_PATH)) {
     const buffer = readFileSync(DB_PATH);
     db = new SQL.Database(buffer);
     console.log('✅ Loaded existing database');
+  } else if (existsSync(SEED_DB_PATH)) {
+    // First deployment - use seed database
+    const buffer = readFileSync(SEED_DB_PATH);
+    db = new SQL.Database(buffer);
+    console.log('✅ Initialized from seed database with existing student data');
+    // Save it as the runtime database
+    saveDatabase();
   } else {
     db = new SQL.Database();
     console.log('✅ Created new database');
