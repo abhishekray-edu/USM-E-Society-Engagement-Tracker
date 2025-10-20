@@ -136,7 +136,12 @@ export function run(sql, params = []) {
     }
   }
   
-  db.run(sql, params);
+  // Use prepared statement with proper parameter binding
+  const stmt = db.prepare(sql);
+  stmt.bind(params);
+  stmt.step();
+  stmt.free();
+  
   saveDatabase();
   
   // Get last insert ID if applicable
