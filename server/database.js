@@ -97,7 +97,8 @@ export function query(sql, params = []) {
   const results = [];
   while (stmt.step()) {
     const row = stmt.getAsObject();
-    results.push(row);
+    // Create a new object to avoid reference issues
+    results.push({ ...row });
   }
   stmt.free();
   
