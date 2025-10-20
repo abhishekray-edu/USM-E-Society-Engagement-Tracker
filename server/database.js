@@ -118,6 +118,24 @@ export function queryOne(sql, params = []) {
  */
 export function run(sql, params = []) {
   const db = getDatabase();
+  
+  // For DELETE/UPDATE, check row count before operation
+  let rowsBefore = 0;
+  if (sql.trim().toUpperCase().startsWith('DELETE') || sql.trim().toUpperCase().startsWith('UPDATE')) {
+    // Extract table name and count rows that will be affected
+    const tableMatch = sql.match(/(?:DELETE\s+FROM|UPDATE)\s+(\w+)/i);
+    if (tableMatch) {
+      const tableName = tableMatch[1];
+      const whereMatch = sql.match(/WHERE\s+(.+?)(?:;|$)/i);
+      if (whereMatch) {
+        const whereClause = whereMatch[1];
+        const countSql = `SELECT COUNT(*) as count FROM ${tableName} WHERE ${whereClause}`;
+        const countResult = query(countSql, params);
+        rowsBefore = countResult[0]?.count || 0;
+      }
+    }
+  }
+  
   db.run(sql, params);
   saveDatabase();
   
@@ -125,7 +143,7 @@ export function run(sql, params = []) {
   const lastId = query('SELECT last_insert_rowid() as id');
   return {
     lastInsertRowid: lastId[0]?.id || 0,
-    changes: db.getRowsModified()
+    changes: rowsBefore // Return the number of rows affected
   };
 }
 
