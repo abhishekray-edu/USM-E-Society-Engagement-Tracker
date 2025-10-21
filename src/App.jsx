@@ -737,12 +737,12 @@ export default function PointsTracker() {
         </div>
 
         <div className="mt-6 bg-white rounded-lg shadow-xl p-6">
-          <h3 className="font-bold text-xl mb-4 text-gray-900">Student Organization Point System</h3>
+          <h3 className="font-bold text-xl mb-4 text-gray-900">USM E-Society Point System</h3>
           
           <div className="space-y-4 text-sm text-gray-700">
             {/* Point Values */}
             <div>
-              <p className="font-bold text-base text-gray-900 mb-2">📊 Point Values:</p>
+              <p className="font-bold text-base text-gray-900 mb-2">Point Values:</p>
               <ul className="space-y-1 ml-4">
                 <li>• E-Society General Body Meeting Attendance: <strong>1 point</strong></li>
                 <li>• E-Society Guest Speaker Event Attendance: <strong>3 points</strong></li>
@@ -753,13 +753,13 @@ export default function PointsTracker() {
 
             {/* Point Accrual */}
             <div>
-              <p className="font-bold text-base text-gray-900 mb-2">📅 Point Accrual:</p>
+              <p className="font-bold text-base text-gray-900 mb-2">Point Accrual:</p>
               <p className="ml-4">July 1st - June 30th (resets annually)</p>
             </div>
 
             {/* Travel Support Tiers */}
             <div>
-              <p className="font-bold text-base text-gray-900 mb-2">✈️ Travel Support Tiers:</p>
+              <p className="font-bold text-base text-gray-900 mb-2">Travel Support Tiers:</p>
               <p className="ml-4 mb-2">Students earn eligibility to apply for travel support:</p>
               <ul className="space-y-1 ml-8">
                 <li>• <strong>Bronze Level (12 points):</strong> Eligible for up to $250</li>
@@ -770,13 +770,13 @@ export default function PointsTracker() {
 
             {/* Gold Tier Extension */}
             <div>
-              <p className="font-bold text-base text-gray-900 mb-2">🏆 Gold Tier Extension:</p>
+              <p className="font-bold text-base text-gray-900 mb-2">Gold Tier Extension:</p>
               <p className="ml-4">Gold tier members have until <strong>December 31st of the following year</strong> (6 months into the new cycle) to apply for and use their funding.</p>
             </div>
 
             {/* Key Stipulations */}
             <div>
-              <p className="font-bold text-base text-gray-900 mb-2">📋 Key Stipulations:</p>
+              <p className="font-bold text-base text-gray-900 mb-2">Key Stipulations:</p>
               
               <div className="ml-4 space-y-3">
                 <div>
