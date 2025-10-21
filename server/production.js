@@ -38,7 +38,7 @@ if (settingsCount.count === 0) {
   
   // Use environment variables if available, otherwise use defaults
   const defaultUsername = process.env.ADMIN_USERNAME || 'admin';
-  const defaultPassword = process.env.ADMIN_PASSWORD || 'admin123';
+  const defaultPassword = process.env.ADMIN_PASSWORD || 'efghsociety';
   
   const hashedPassword = await hashPassword(defaultPassword);
   run('INSERT INTO settings (key, value) VALUES (?, ?)', ['admin_username', defaultUsername]);
