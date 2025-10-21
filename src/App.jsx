@@ -308,7 +308,7 @@ export default function PointsTracker() {
                   <div className="text-2xl font-bold text-black">3 pts</div>
                 </div>
                 <div className="bg-white p-3 rounded shadow-sm">
-                  <div className="text-sm text-gray-600">Coffee w/ Entrepreneur</div>
+                  <div className="text-sm text-gray-600">CfE Event</div>
                   <div className="text-2xl font-bold text-black">3 pts</div>
                 </div>
                 <div className="bg-white p-3 rounded shadow-sm">
@@ -582,7 +582,7 @@ export default function PointsTracker() {
                 <div className="text-2xl font-bold text-black">3 pts</div>
               </div>
               <div className="bg-white p-3 rounded shadow-sm">
-                <div className="text-sm text-gray-600">Coffee w/ Entrepreneur</div>
+                <div className="text-sm text-gray-600">CfE Event</div>
                 <div className="text-2xl font-bold text-black">3 pts</div>
               </div>
               <div className="bg-white p-3 rounded shadow-sm">
