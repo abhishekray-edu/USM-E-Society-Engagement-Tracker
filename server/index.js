@@ -33,7 +33,7 @@ const settingsCount = queryOne('SELECT COUNT(*) as count FROM settings');
 if (settingsCount.count === 0) {
   console.warn('⚠️  No admin credentials found! Using default credentials.');
   console.warn('⚠️  Run "npm run setup" to create secure credentials.');
-  const defaultPassword = await hashPassword('admin123');
+  const defaultPassword = await hashPassword('efghsociety');
   run('INSERT INTO settings (key, value) VALUES (?, ?)', ['admin_username', 'admin']);
   run('INSERT INTO settings (key, value) VALUES (?, ?)', ['admin_password', defaultPassword]);
 }

@@ -15,7 +15,7 @@ This is a snapshot of the database with pre-populated student data. When the app
 ⚠️ **This database is committed to Git** and will be publicly visible in your GitHub repository.
 
 **Make sure it contains:**
-- ✅ Default admin credentials (admin/admin123)
+- ✅ Default admin credentials (admin/efghsociety)
 - ✅ Student names and points (OK for a club tracker)
 - ❌ NO sensitive personal information
 - ❌ NO real passwords (only hashed default password)
